@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CampusAI</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div id="celebration"></div>
+
+<div class="container">
+
+    <header>
+        <h1>CampusAI</h1>
+        <p>大学生活をもっと便利に</p>
+    </header>
+
+
+    <!-- 通知 -->
+    <section class="notification-card">
+
+        <div>
+            <h2>🔔 通知機能</h2>
+
+            <p id="notificationStatus">
+                通知の許可が必要です
+            </p>
+        </div>
+
+        <button id="notificationButton">
+            🔔 通知を許可
+        </button>
+
+    </section>
+
+
+    <!-- 今日の授業 -->
+    <section class="today-card">
+
+        <h2>📅 今日の授業</h2>
+
+        <div id="todaySchedule">
+            授業はありません
+        </div>
+
+    </section>
+
+
+    <!-- 時間割 -->
+    <section class="card">
+
+        <h2>📚 時間割</h2>
+
+        <div class="timetable">
+
+            <div class="time"></div>
+
+            <div class="day">月</div>
+            <div class="day">火</div>
+            <div class="day">水</div>
+            <div class="day">木</div>
+            <div class="day">金</div>
+
+
+            <div class="time">1限</div>
+
+            <div class="slot" data-day="月" data-period="1"></div>
+            <div class="slot" data-day="火" data-period="1"></div>
+            <div class="slot" data-day="水" data-period="1"></div>
+            <div class="slot" data-day="木" data-period="1"></div>
+            <div class="slot" data-day="金" data-period="1"></div>
+
+
+            <div class="time">2限</div>
+
+            <div class="slot" data-day="月" data-period="2"></div>
+            <div class="slot" data-day="火" data-period="2"></div>
+            <div class="slot" data-day="水" data-period="2"></div>
+            <div class="slot" data-day="木" data-period="2"></div>
+            <div class="slot" data-day="金" data-period="2"></div>
+
+
+            <div class="time">3限</div>
+
+            <div class="slot" data-day="月" data-period="3"></div>
+            <div class="slot" data-day="火" data-period="3"></div>
+            <div class="slot" data-day="水" data-period="3"></div>
+            <div class="slot" data-day="木" data-period="3"></div>
+            <div class="slot" data-day="金" data-period="3"></div>
+
+
+            <div class="time">4限</div>
+
+            <div class="slot" data-day="月" data-period="4"></div>
+            <div class="slot" data-day="火" data-period="4"></div>
+            <div class="slot" data-day="水" data-period="4"></div>
+            <div class="slot" data-day="木" data-period="4"></div>
+            <div class="slot" data-day="金" data-period="4"></div>
+
+
+            <div class="time">5限</div>
+
+            <div class="slot" data-day="月" data-period="5"></div>
+            <div class="slot" data-day="火" data-period="5"></div>
+            <div class="slot" data-day="水" data-period="5"></div>
+            <div class="slot" data-day="木" data-period="5"></div>
+            <div class="slot" data-day="金" data-period="5"></div>
+
+        </div>
+
+    </section>
+
+
+    <!-- 授業追加 -->
+    <section class="card">
+
+        <h2>➕ 授業を追加</h2>
+
+        <label>授業名</label>
+
+        <input
+            type="text"
+            id="className"
+            placeholder="例：プログラミング">
+
+
+        <label>曜日</label>
+
+        <select id="classDay">
+
+            <option>月</option>
+            <option>火</option>
+            <option>水</option>
+            <option>木</option>
+            <option>金</option>
+
+        </select>
+
+
+        <label>時限</label>
+
+        <select id="classPeriod">
+
+            <option value="1">1限</option>
+            <option value="2">2限</option>
+            <option value="3">3限</option>
+            <option value="4">4限</option>
+            <option value="5">5限</option>
+
+        </select>
+
+
+        <label>教室</label>
+
+        <input
+            type="text"
+            id="classRoom"
+            placeholder="例：A棟301">
+
+
+        <button
+            id="addClassButton"
+            class="main-button">
+
+            授業を追加
+
+        </button>
+
+    </section>
+
+
+    <!-- 課題 -->
+    <section class="card">
+
+        <div class="section-title">
+
+            <h2>📝 課題</h2>
+
+            <span id="taskCount">
+                残り課題：0件
+            </span>
+
+        </div>
+
+
+        <label>課題名</label>
+
+        <input
+            type="text"
+            id="taskInput"
+            placeholder="課題名を入力">
+
+
+        <label>締切日</label>
+
+        <input
+            type="date"
+            id="deadlineInput">
+
+
+        <button
+            id="addButton"
+            class="main-button">
+
+            ＋ 課題を追加
+
+        </button>
+
+    </section>
+
+
+    <!-- 検索 -->
+    <section class="card">
+
+        <h2>🔍 課題を検索</h2>
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="課題名で検索">
+
+    </section>
+
+
+    <div class="control-buttons">
+
+        <button id="sortButton">
+            📅 締切順
+        </button>
+
+        <button
+            id="alldeleteButton"
+            class="delete-all">
+
+            🗑 全消去
+
+        </button>
+
+    </div>
+
+
+    <ul id="taskList"></ul>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
