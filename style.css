@@ -388,44 +388,233 @@ li input[type="checkbox"] {
 
 /* スマホ */
 
+/* =================================
+   スマホ用デザイン
+================================= */
+
 @media (max-width: 600px) {
 
     body {
-        padding: 20px 10px;
+        padding: 15px 10px;
+        font-size: 15px;
+    }
+
+    .container {
+        width: 100%;
+    }
+
+
+    /* ヘッダー */
+
+    header {
+        margin-bottom: 20px;
     }
 
     header h1 {
-        font-size: 34px;
+        font-size: 32px;
     }
+
+    header p {
+        font-size: 13px;
+    }
+
+
+    /* カード */
 
     .card,
     .today-card,
     .notification-card {
-        padding: 18px;
+        padding: 16px;
+        border-radius: 14px;
+        margin-bottom: 14px;
     }
 
+
+    /* 通知 */
+
     .notification-card {
+        display: flex;
         flex-direction: column;
         align-items: stretch;
-        gap: 15px;
+        gap: 12px;
+    }
+
+    .notification-card h2 {
+        font-size: 18px;
+    }
+
+    .notification-card p {
+        font-size: 13px;
     }
 
     #notificationButton {
         width: 100%;
+        height: 44px;
     }
 
-    .timetable {
-        grid-template-columns: 45px repeat(5, minmax(75px, 1fr));
+
+    /* 今日の授業 */
+
+    .today-card h2 {
+        font-size: 19px;
+    }
+
+    #todaySchedule {
+        font-size: 15px;
+    }
+
+
+    /* 時間割 */
+
+    .timetable-wrapper {
         overflow-x: auto;
     }
 
-    .time,
-    .slot {
-        min-width: 75px;
+    .timetable {
+        display: grid;
+        grid-template-columns:
+            45px
+            repeat(5, 82px);
+
+        gap: 3px;
+
+        width: max-content;
+        margin-top: 15px;
     }
 
+    .time,
+    .day,
+    .slot {
+        min-height: 65px;
+        border-radius: 6px;
+    }
+
+    .day {
+        min-height: 38px;
+        font-size: 14px;
+    }
+
+    .time {
+        font-size: 12px;
+    }
+
+    .slot {
+        font-size: 12px;
+        padding: 4px;
+    }
+
+    .class-name {
+        font-size: 12px;
+        line-height: 1.3;
+    }
+
+    .class-room {
+        font-size: 10px;
+        margin-top: 3px;
+    }
+
+
+    /* 見出し */
+
+    h2 {
+        font-size: 19px;
+    }
+
+
+    /* 入力 */
+
+    label {
+        font-size: 14px;
+        margin-top: 12px;
+    }
+
+    input,
+    select {
+        height: 45px;
+        font-size: 16px;
+    }
+
+
+    /* メインボタン */
+
+    .main-button {
+        height: 48px;
+        font-size: 15px;
+    }
+
+
+    /* 課題タイトル */
+
+    .section-title {
+        align-items: center;
+    }
+
+    #taskCount {
+        font-size: 12px;
+    }
+
+
+    /* 課題 */
+
+    li {
+        padding: 15px;
+        border-radius: 12px;
+        margin-bottom: 12px;
+    }
+
+    li strong {
+        font-size: 17px;
+    }
+
+    li div {
+        line-height: 1.8;
+    }
+
+
+    /* 課題ボタン */
+
+    .task-buttons {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 7px;
+    }
+
+    .task-buttons button {
+        min-height: 40px;
+        font-size: 13px;
+    }
+
+    .task-buttons .delete-button {
+        grid-column: span 2;
+    }
+
+
+    /* 検索 */
+
+    #searchInput {
+        height: 46px;
+    }
+
+
+    /* 締切順・全消去 */
+
     .control-buttons {
-        flex-direction: column;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+    }
+
+    .control-buttons button {
+        height: 44px;
+        font-size: 13px;
+    }
+
+
+    /* 達成エフェクト */
+
+    .achievement-message {
+        font-size: 32px;
+        white-space: nowrap;
     }
 
 }
